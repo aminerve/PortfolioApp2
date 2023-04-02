@@ -1,15 +1,23 @@
+import './App.css';
+import { Route, Routes } from 'react-router-dom';
+import Home from './pages/Home';
+import Projects from './pages/Projects';
+import Experience from './pages/Experience';
+import NavBar from './components/NavBar';
+import Footer from './components/Footer';
 
-import './App.scss';
-import { Routes, Route } from 'react-router-dom';
-import Layout from './components/Layout';
 
 function App() {
   return (
-    <>
-    <Routes>
-      <Route path='/' element={<Layout/>}/>
-    </Routes>
-    </>
+    <div className='App'>
+      <NavBar/>
+      <Routes>
+        <Route path='/' element={<Home/>}/>
+        <Route path='/projects' element={<Projects/>}/>
+        <Route path='/experience' element={<Experience/>}/>
+      </Routes>
+      <Footer/>
+    </div>
   );
 }
 
